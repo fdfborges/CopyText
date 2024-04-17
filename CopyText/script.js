@@ -13,6 +13,14 @@
     const textarea4 = document.getElementById('textarea4');
     const textarea5 = document.getElementById('textarea5');
     const textarea6 = document.getElementById('textarea6');
+
+    // Obtém a referência para o <BtnEditTextarea1> com o id <BtnEditTextarea1>
+    const BtnEditTextarea1 = document.getElementById('BtnEditTextarea1');
+    const BtnEditTextarea2 = document.getElementById('BtnEditTextarea2');
+    const BtnEditTextarea3 = document.getElementById('BtnEditTextarea3');
+    const BtnEditTextarea4 = document.getElementById('BtnEditTextarea4');
+    const BtnEditTextarea5 = document.getElementById('BtnEditTextarea5');
+    const BtnEditTextarea6 = document.getElementById('BtnEditTextarea6');
 // Obtém a referência para a <label> com o ID 'label1'
     const label1 = document.getElementById('label1');
     const label2 = document.getElementById('label2');
@@ -47,6 +55,19 @@ let dadosTextarea = [
     label6.textContent = dadosTextarea[5].label
 
 
+function habilitedTextAreaAndSalveValue(id){
+    const textarea = document.getElementById(id);
+
+    if (textarea.disabled) {
+        textarea.disabled = false; // Se estiver desabilitada, habilita a textarea
+        textarea.focus(); // Dá foco à textarea
+    } else {
+        textarea.disabled = true; // Se estiver habilitada, desabilita a textarea
+        localStorage.setItem(id, textarea.value); // Salva o valor no localStorage
+    }
+}
+
+
 BtnCopy1.addEventListener('click', function() {
     let textToCopy1 = textarea1.value;
     navigator.clipboard.writeText(textToCopy1);
@@ -56,6 +77,10 @@ BtnCopy1.addEventListener('click', function() {
         BtnCopy1.textContent = 'Copiar';
     }, 1000);
 });
+
+BtnEditTextarea1.addEventListener('click', ()=>{
+    habilitedTextAreaAndSalveValue('textarea1');
+})
 
 BtnCopy2.addEventListener('click', function() {
     let textToCopy2 = textarea2.value;
@@ -67,6 +92,10 @@ BtnCopy2.addEventListener('click', function() {
     }, 1000);
 });
 
+BtnEditTextarea2.addEventListener('click', ()=>{
+    habilitedTextAreaAndSalveValue('textarea2');
+})
+
 BtnCopy3.addEventListener('click', function() {
     let textToCopy3 = textarea3.value;
     navigator.clipboard.writeText(textToCopy3);
@@ -76,6 +105,10 @@ BtnCopy3.addEventListener('click', function() {
         BtnCopy3.textContent = 'Copiar';
     }, 1000);
 });
+
+BtnEditTextarea3.addEventListener('click', ()=>{
+    habilitedTextAreaAndSalveValue('textarea3');
+})
 
 BtnCopy4.addEventListener('click', function() {
     let textToCopy4 = textarea4.value;
@@ -87,6 +120,10 @@ BtnCopy4.addEventListener('click', function() {
     }, 1000);
 });
 
+BtnEditTextarea4.addEventListener('click', ()=>{
+    habilitedTextAreaAndSalveValue('textarea4');
+})
+
 BtnCopy5.addEventListener('click', function() {
     let textToCopy5 = textarea5.value;
     navigator.clipboard.writeText(textToCopy5);
@@ -97,6 +134,10 @@ BtnCopy5.addEventListener('click', function() {
     }, 1000);
 });
 
+BtnEditTextarea5.addEventListener('click', ()=>{
+    habilitedTextAreaAndSalveValue('textarea5');
+})
+
 BtnCopy6.addEventListener('click', function() {
     let textToCopy6 = textarea6.value;
     navigator.clipboard.writeText(textToCopy6);
@@ -106,3 +147,16 @@ BtnCopy6.addEventListener('click', function() {
         BtnCopy6.textContent = 'Copiar';
     }, 1000);
 });
+
+BtnEditTextarea6.addEventListener('click', ()=>{
+    habilitedTextAreaAndSalveValue('textarea6');
+})
+
+window.onload = function() {
+    textarea1.value = localStorage.getItem('textarea1') || dadosTextarea[0].texto;
+    textarea2.value = localStorage.getItem('textarea2') || dadosTextarea[1].texto;
+    textarea3.value = localStorage.getItem('textarea3') || dadosTextarea[2].texto;
+    textarea4.value = localStorage.getItem('textarea4') || dadosTextarea[3].texto;
+    textarea5.value = localStorage.getItem('textarea5') || dadosTextarea[4].texto;
+    textarea6.value = localStorage.getItem('textarea6') || dadosTextarea[5].texto;
+}
