@@ -1,3 +1,5 @@
+@import 'variables/variables';
+
 body{
 	display: flex;
 	justify-content: center;
@@ -15,16 +17,7 @@ body{
 		padding: 1rem;
 		gap: 1rem;
 		border: 1px outset green;
-		.HeadBox{
-			/* input{
-				width: 8rem;
-				background-color: transparent;
-				border: none;
-			} */
-		}
 	}
-	
-
 }
 
 
