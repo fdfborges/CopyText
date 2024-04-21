@@ -1,8 +1,7 @@
-@import 'variables/variables';
-
+@import 'variables/variables.scss';
+@import 'components/header.scss';
 body{
-	display: flex;
-	justify-content: center;
+
 }
 
 .containerPrincipal{
