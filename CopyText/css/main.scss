@@ -1,87 +1,85 @@
 @import 'variables/variables.scss';
 @import 'components/header.scss';
-body{
 
+*{
+	font-family: "Inter", sans-serif;
 }
+
+.IniciodoAtendimento, .MeiodoAtendimento{
+	display: flex;
+	gap: 1rem;
+	box-sizing: border-box;
+	padding: 0rem 0rem 2rem 2rem;
+	overflow-x: scroll;
+	.box{
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		.HeadBox{
+			display: flex;
+			flex-direction: column;
+			.InputWithBtnEdit{
+				display: flex;
+				button{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 1.5rem;
+					height: 1.5rem;
+					
+					background-color: transparent;
+					border: none;
+				}
+			}
+				button{
+					width: 8rem;
+					height: 10rem;
+					border: none;
+					font-family: "Inter", sans-serif;
+					font-weight: 600;
+					color: $color-tertiary;
+					background-color: $color-primary;
+				}
+			input{
+				width: 6rem;
+				background-color: transparent;
+				border: none;
+			}
+				img{
+					height: 1.3rem;
+				}
+			}
+		}
+		textarea{
+			margin-top: 1.8rem;
+			width: 25rem;
+			height: 9.7rem;
+		}
+	}
+
 
 .containerPrincipal{
 	display: flex;
-	gap: 5rem;
-	.containerLeft, .containerRight{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		width: 30rem;
-		padding: 1rem;
-		gap: 1rem;
-		border: 1px outset green;
-	}
-}
-
-
-
-
-
-
-.containerRight{
-	border: 1px outset blue;	
-}
-	
-
-.box{
-	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
-}
-
-.box textarea{
-	width: 25rem;
-	height: 10rem;
-}
-
-.HeadBox{
-	display: flex;
-	align-items: center;
-	gap: 0.2rem;
-
-}
-
-
-.btnCopy{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	gap: 0.2rem;
-	width: 100%;
-	height: 2rem;
-	img{
-		height: 01rem;
+	gap: 1rem;
+	margin-top: 1rem;
+	label{
+		padding-left: 2rem;
 	}
 }
 
 .BtnEditTextarea1{
 	position: relative;
-	bottom: 2rem; /*PAREI AQUIIII*/
-	right: -0.1rem;
+	right: 2.2rem;
+	top: 5.2rem;
+	
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 1.5rem;
-	height: 1.5rem;
+	background-color: transparent;
+	border: none;
 	img{
 		height: 1rem;
 	}
 }
 
-.BtnEditLabel{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 1.5rem;
-	height: 1.5rem;
-	img{
-		height: 1rem;
-	}
-}
