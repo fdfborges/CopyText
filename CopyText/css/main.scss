@@ -31,14 +31,18 @@
 					border: none;
 				}
 			}
-				button{
-					width: 8rem;
-					height: 10rem;
-					border: none;
-					font-family: "Inter", sans-serif;
-					font-weight: 600;
-					color: $color-tertiary;
-					background-color: $color-primary;
+		.btnCopy{
+			width: 8rem;
+			height: 10rem;
+			border: none;
+			font-family: "Inter", sans-serif;
+			font-weight: 600;
+			color: $color-tertiary;
+			background-color: $color-primary;
+			&:hover{
+					transition: 0.1s;
+                    background-color: $color-six;
+					}
 				}
 			input{
 				width: 6rem;
