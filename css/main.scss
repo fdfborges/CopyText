@@ -30,6 +30,11 @@
 					
 					background-color: transparent;
 					border: none;
+					&:hover{
+						transition: 0.3s;
+						transform: rotate(48deg);
+					}
+					
 				}
 			}
 		.btnCopy{
@@ -44,6 +49,10 @@
 					transition: 0.1s;
                     background-color: $color-six;
 					}
+			&:active{
+				transition: 0.1s;
+                    background-color: #71ad99;
+			}
 				}
 			input{
 				width: 6rem;
@@ -83,6 +92,11 @@
 	align-items: center;
 	background-color: transparent;
 	border: none;
+	transition: 0.3s;
+	&:hover{
+		transition: 0.3s;
+		transform: rotate(72deg);
+	}
 	img{
 		height: 1rem;
 	}
