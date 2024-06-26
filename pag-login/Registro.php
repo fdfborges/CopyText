@@ -5,12 +5,15 @@
         // print_r($_POST['lastname']);
         // print_r($_POST['email']);
 
-        include_once('../config.php');
+        include_once('config.php');
         $nome = $_POST['firstname'];
         $sobrenome = $_POST['lastname'];
+        $email = $_POST['email'];
         $telefone = $_POST['number'];
+        $senha = $_POST['password'];
+        $sexo = $_POST['gender'];
 
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,telefone) VALUES ('$nome','$sobrenome','$telefone')");
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,email,telefone,sexo,senha) VALUES ('$nome','$sobrenome','$email','$telefone','$sexo','$senha')");
     }
 ?>
 
@@ -69,19 +72,19 @@
                     </div>
                     <div class="gender-group">
                         <div class="gender-input">
-                            <input type="radio" id="female" name="gender">
+                            <input type="radio" id="female" value="feminino" name="gender">
                             <label for="female">Feminino</label>
                         </div>
                         <div class="gender-input">
-                            <input type="radio" id="male" name="gender">
+                            <input type="radio" id="male" value="masculino" name="gender">
                             <label for="male">Masculino</label>
                         </div>
                         <div class="gender-input">
-                            <input type="radio" id="others" name="gender">
+                            <input type="radio" id="others" value="outros" name="gender">
                             <label for="others">Outros</label>
                         </div>
                         <div class="gender-input">
-                            <input type="radio" id="none" name="gender">
+                            <input type="radio" id="none" value="prefiro nao dizer" name="gender">
                             <label for="none">Prefiro não dizer</label>
                         </div>
                     </div>
