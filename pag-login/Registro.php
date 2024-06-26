@@ -1,3 +1,19 @@
+<?php
+    if(isset($_POST['submit']))
+    {
+        // print_r($_POST['firstname']);
+        // print_r($_POST['lastname']);
+        // print_r($_POST['email']);
+
+        include_once('../config.php');
+        $nome = $_POST['firstname'];
+        $sobrenome = $_POST['lastname'];
+        $telefone = $_POST['number'];
+
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,telefone) VALUES ('$nome','$sobrenome','$telefone')");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,7 +28,7 @@
             <img src="./assets/image-registerpag.svg" alt="">
         </div>
         <div class="form">
-            <form action="#">
+            <form action="Registro.php" method="POST">
                 <div class="form-header">
                     <div class="title">
                         <h1>Cadastre-se!</h1>
@@ -71,7 +87,7 @@
                     </div>
                 </div>
                 <div class="continue-button">
-                    <Button><a href="#">Continuar</a></Button>
+                    <Button type="submit" name="submit">Continua</Button>
                 </div>
             </form>
         </div>
