@@ -1,20 +1,20 @@
 <?php
-    if(isset($_POST['submit']))
-    {
-        // print_r($_POST['firstname']);
-        // print_r($_POST['lastname']);
-        // print_r($_POST['email']);
+{
+    include_once('config.php');
+    $nome = $_POST['firstname'];
+    $sobrenome = $_POST['lastname'];
+    $email = $_POST['email'];
+    $telefone = $_POST['number'];
+    $senha = $_POST['password'];
+    $confirmSenha = $_POST['confirm-password'];
+    $sexo = $_POST['gender'];
 
-        include_once('config.php');
-        $nome = $_POST['firstname'];
-        $sobrenome = $_POST['lastname'];
-        $email = $_POST['email'];
-        $telefone = $_POST['number'];
-        $senha = $_POST['password'];
-        $sexo = $_POST['gender'];
-
+    if($senha !== $confirmSenha){
+        echo '<script>document.getElementById("passwordError").textContent = "As senhas não coincidem.";</script>';
+    } else {
         $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,email,telefone,sexo,senha) VALUES ('$nome','$sobrenome','$email','$telefone','$sexo','$senha')");
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -55,17 +55,18 @@
                     </div>
                     <div class="input-box">
                         <label for="number">Telefone:</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxxx" required>
+                        <input id="number" type="tel" name="number" pattern="[0-9]{12}" maxlength="12" placeholder="(xx) xxxx-xxxxx" required>
                     </div>
                     <div class="input-box">
                         <label for="password">Sua senha:</label>
-                        <input id="password" type="tel" name="password" placeholder="Digite sua senha:" required>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha:" required>
                     </div>
                     <div class="input-box">
-                        <label for="password">Confirme sua senha:</label>
-                        <input id="password" type="tel" name="confirm-password" placeholder="Digite sua senha:" required>
+                        <label for="confirm-password">Confirme sua senha:</label>
+                        <input id="confirm-password" type="password" name="confirm-password" placeholder="Digite sua senha:" required>
                     </div>
                 </div>
+                <div id="errorParagraph"><p id="passwordError" style="color: red;"></p></div>
                 <div class="gender-inputs">
                     <div class="gender-title">
                         <h6>Gênero</h6>
@@ -96,4 +97,5 @@
         </div>
     </div>
 </body>
+<script src="script/validator.js"></script>
 </html>
