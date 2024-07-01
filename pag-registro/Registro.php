@@ -1,6 +1,6 @@
 <?php
 {
-    include_once('config.php');
+    include_once('../config.php');
     $nome = $_POST['firstname'];
     $sobrenome = $_POST['lastname'];
     $email = $_POST['email'];
@@ -37,7 +37,7 @@
                         <h1>Cadastre-se!</h1>
                     </div>
                     <div class="login-button">
-                        <button><a href="#">Entrar</a></button>
+                        <button><a href="http://localhost/CopyText/pag-login/Login.php">Entrar</a></button>
                     </div>
                 </div>
                 <div class="input-group">
