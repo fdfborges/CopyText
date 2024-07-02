@@ -53,9 +53,10 @@ body{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
         .form-header{
-           margin-bottom: 3rem;
+           margin-bottom: 2.5rem;
            display: flex;
            justify-content: space-between;
+           gap: 15rem;
             .title{
                 h1::after{
                     content: '';
@@ -72,22 +73,27 @@ body{
         .login-button{
             display: flex;
             align-items: center;
-                button{
-                    border: none;
-                    background-color: $color-primary;
-                    padding: 0.4rem 1rem;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    transition: 0.1s;
+            a{      
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 5rem;
+                height: 1.8rem;
+                text-decoration: none;
+                border: none;
+                background-color: $color-primary;
+                padding: 0.4rem 1rem;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.1s;
+                font-size: 0.9rem;
+                text-decoration: none;
+                font-weight: 500;
+                color: #fff;
                         &:hover{
                             background-color: $color-secondary;
                             transition: 0.3s;
                         }
-                    a{
-                        text-decoration: none;
-                        font-weight: 500;
-                        color: #fff;
-                    }
                 }       
         }
     .input-group{

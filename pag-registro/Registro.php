@@ -1,6 +1,7 @@
 <?php
-{
-    include_once('../config.php');
+include_once('../config.php');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['firstname'];
     $sobrenome = $_POST['lastname'];
     $email = $_POST['email'];
@@ -12,7 +13,8 @@
     if($senha !== $confirmSenha){
         echo '<script>document.getElementById("passwordError").textContent = "As senhas não coincidem.";</script>';
     } else {
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,email,telefone,sexo,senha) VALUES ('$nome','$sobrenome','$email','$telefone','$sexo','$senha')");
+        $query = "INSERT INTO usuarios (nome, sobrenome, email, telefone, sexo, senha) VALUES ('$nome', '$sobrenome', '$email', '$telefone', '$sexo', '$senha')";
+        $result = mysqli_query($conexao, $query);
     }
 }
 ?>
@@ -31,15 +33,15 @@
             <img src="./assets/image-registerpag.svg" alt="">
         </div>
         <div class="form">
-            <form action="Registro.php" method="POST">
-                <div class="form-header">
-                    <div class="title">
-                        <h1>Cadastre-se!</h1>
-                    </div>
-                    <div class="login-button">
-                        <button><a href="http://localhost/CopyText/pag-login/Login.php">Entrar</a></button>
-                    </div>
+            <div class="form-header">
+                <div class="title">
+                    <h1>Cadastre-se!</h1>
                 </div>
+                <div class="login-button">
+                    <a href="http://localhost/CopyText/pag-login/Login.php">Entrar</a>
+                </div>
+            </div>
+            <form action="Registro.php" method="POST">
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname">Primeiro Nome:</label>
