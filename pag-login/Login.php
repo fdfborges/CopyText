@@ -28,9 +28,16 @@
                         <input id="password" type="password" name="password" placeholder="Digite sua senha:" required>
                     </div>
                 </div>
-                <div id="errorParagraph"><p id="passwordError" style="color: red;"></p></div>
-                <div class="gender-inputs">
-                </div>
+                <!-- <div id="errorParagraph"><p id="passwordError" style="color: red;"></p></div> -->
+                 <div class="SaveAcessAndRecoveryPassowrd">
+                    <div class="SaveAcess">
+                       <label for="">Lembrar-me</label> 
+                       <input type="checkbox">  
+                    </div>
+                    <div class="RecoveryPassword">
+                       <a href="">Recuperar senha</a>
+                    </div>
+                 </div>
                 <div class="continue-button">
                     <Button type="submit" name="submit">Continua</Button>
                 </div>
