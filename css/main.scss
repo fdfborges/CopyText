@@ -1,0 +1,48 @@
+/* Estilos para os containers */
+.IniciodoAtendimento, .MeiodoAtendimento, .FinaldoAtendimento {
+    display: flex;
+    flex-wrap: wrap;  /* Permite quebra de linha */
+    gap: 1rem;  /* Espaçamento entre as caixas */
+    box-sizing: border-box;
+    padding: 1rem;
+    border: 1px solid #ddd;  /* Opcional: para diferenciar as seções */
+}
+
+/* Estilos para cada box */
+.box{
+    flex: 1 0 23%;  /* Cada box ocupará 23% da largura (4 por linha) */
+    box-sizing: border-box;
+    margin-bottom: 1rem;  /* Espaçamento entre as linhas */
+    border: 1px solid #ddd;  /* Opcional: para diferenciar as caixas */
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Estilização dos botões dentro da box */
+.BtnEditLabel, .BtnEditTextarea, .btnCopy, .btnDelete {
+    background-color: #4CAF50;  /* Cor de fundo dos botões */
+    border: none;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.BtnEditLabel:hover, .BtnEditTextarea:hover, .btnCopy:hover, .btnDelete:hover {
+    background-color: #45a049; /* Efeito hover */
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    .box {
+        flex: 1 0 48%;  /* 2 itens por linha em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        flex: 1 0 98%;  /* 1 item por linha em telas muito pequenas */
+    }
+}

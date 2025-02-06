@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CopyText Script</title>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+    <header>
+        <div class="NavBar"><img src="./assets/LOGO.png" alt=""></div>
+        <div class="NavBarFilter">
+            <div class="NavBarFilter-Right">
+                <select name="select-script">
+                    <option value="" selected disabled>Selecione o Script</option>
+                    <option value="">Pd/Mag</option>
+                    <option value="">PD/ENS</option>
+                    <option value="">2º Licenciatura</option>
+                    <option value="">Pós-Graduação</option>
+                </select>
+            </div>
+            <div class="NavBarFilter-Left">
+                <button class="BtnFilters">Chaves Pix</button>
+                <button class="BtnFilters">Grades</button>
+                <button class="BtnFilters">Argumentários</button>
+            </div>
+        </div>
+    </header>
+    <div class="containerPrincipal">
+        <label for="">Atendimentos:</label>
+        <button id="addInicio">Adicionar Início</button>
+        <button id="addMeio">Adicionar Meio</button>
+        <button id="addFinal">Adicionar Final</button>
+
+        <div id="IniciodoAtendimento" class="IniciodoAtendimento"></div>
+        <div id="MeiodoAtendimento" class="MeiodoAtendimento"></div>
+        <div id="FinaldoAtendimento" class="FinaldoAtendimento"></div>
+    </div>
+    <footer>
+        <span>Desenvolvido com <b>♥</b> por Felipe Borges</span>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
