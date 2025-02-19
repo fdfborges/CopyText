@@ -202,4 +202,25 @@ footer div a img {
     height: 1rem
 }
 
+.IniciodoAtendimento, .MeiodoAtendimento, .FinaldoAtendimento{
+    align-items: center;
+}
+
+#addInicio, #addMeio, #addFinal{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    background-color: #00ce7c;
+    color: white;
+    font-weight: 600;
+    border: 1px solid black;
+    &:hover{
+        transition: .1s;
+        background-color: #94cebb;
+    }
+    &:active{
+        transition: .1s;
+        background-color: #73af9b;
+    }
+}
 /*# sourceMappingURL=main.css.map */
